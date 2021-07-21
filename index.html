@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Generator</title>
+    <style>
+        #body {
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to right, red, aqua);
+        }
+
+        #centerd {
+            display: block;
+            align-items: center;
+            margin-left: 28px;
+            margin-top: 80px;
+            text-align: center;
+        }
+        .comm{
+            font-size: 3.4rem;
+            font-weight: bold;
+            letter-spacing: .5rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <div id="centerd">
+        <h2 class="comm">Background Generator</h2>
+        
+        <h2 class="comm">Pick Color</h2>
+        <br>
+        <input class="comm" type="color" name="" id="colorone" value="">
+        <input class="comm" type="color" name="" id="colortwo" value="">
+        <br><br>
+        <h3 id="showValue"></h3>
+    </div>
+
+    <script>
+        const colorone = document.getElementById('colorone');
+        const colortwo = document.getElementById('colortwo');
+        const body = document.getElementById('body');
+        colorone.addEventListener('input',function(){
+            body.style.background = `linear-gradient(to right, ${colorone.value},${colortwo.value})`;
+        }) ;
+        colortwo.addEventListener('input',function(){
+            body.style.background = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+        }) ;
+    </script>
+</body>
+
+</html>
